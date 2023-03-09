@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/431c29c6ee.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -23,15 +26,41 @@
 
     </header>
     <main>
+        <form id="form">
+            <label for="fullName">Full name: </label>
+            <input id="fullName" type="text" value=""><br>
+            <label for="department">Department:<select id="department" style="width: 11.3rem;margin-top: 10px;">
+                    <option value="1">Administration</option>
+                    <option value="2">Marketing</option>
+                    <option value="3">Development</option>
+                    <option value="4">Finance</option><br>
+                </select></label>
+            <label for="Level">Level: <select id="Level" style="width: 11.3rem;margin-top: 10px;">
+                    <option value="5">Junior </option>
+                    <option value="6"> Mid-Senior</option>
+                    <option value="7"> Senior</option>
+                </select></label><br>
+            <label for="img">Image url:</label>
+            <input id="img" type="text" value=""><br>
+            <input type="submit" value="submit" style="width:0px;height: 3px;font-size: 12px;text-align:center; margin-left: 30px;">
+        </form><br>
+
+        <section id="sec">
+          <section id="sec1"></section>
+          <section id="sec2"></section>
+          
+         
+
+        </section>
+
+
+
 
         <script src="app.js"></script>
-        
-
-
     </main>
     <footer>
 
-        <section>
+        <section class="c1">
             <a> <i class="fa-brands fa-facebook"></i></a>
             <a><i class="fa-brands fa-whatsapp"></i></a>
             <a> <i class="fa-solid fa-phone"></i></a>

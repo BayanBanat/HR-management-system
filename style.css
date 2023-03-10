@@ -1,7 +1,7 @@
 
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 body {
     background-color: rgb(57, 57, 57);
@@ -13,20 +13,25 @@ header{
     display: flex ;
    
     background-color: var(--background);
-    justify-content: space-between;
     
+    
+}
+.sec1 img{
+    width: 10px;
 }
 
 nav{
-    justify-content: space-around;
+    display: inline;
+    justify-content: center;
+margin-left: 600px;
 }
-
 nav ul{
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-  gap: 20px;
+  gap: 50px;
   padding-right: 10px;
+  
   
 }
 a{
@@ -57,41 +62,41 @@ main{
 form {
     display: flex;
     flex-direction: column;
-    /* align-self: flex-start; */
-    /* background-color: #938f92; */
-    margin: 40px 350px;
-    margin-left: 160px;
-
-
-
-
+    margin: 40px ;
+    b
 
 }
 
 
-input,
+/* input, */
 select {
     display: flex;
     padding: 12px 20px;
-    background-color: #d1d0cd;
+    
+    /* background-color: #d1d0cd; */
+    /* margin-left: 30px; */
 }
 
-input
+.one
  {
-    padding: 10px 70px;
-    width: 30%;
+    padding: 10px 50px;
+    width: 20%;
     box-sizing: border-box;
     border-radius: 4px;
     margin-top: 15px;
 }
-#btn{
-    width:30%
+.two{
+    width:10%;
+    margin-left: 30px;
 }
 
 label {
    
     font-weight: 800;
     font-size: 20px;
+}
+h2{
+    margin-left:30px;
 }
 
 

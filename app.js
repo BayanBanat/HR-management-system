@@ -62,7 +62,8 @@ EmployeeInfo.prototype.render = function () {
     sectionEl.appendChild(pEl);
     
 
-    
+    imgEl.style="width:300px ;border-radius:20px";
+    // sectionEl.style=" "
 
 
 }

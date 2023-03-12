@@ -13,7 +13,11 @@ function EmployeeInfo( employeeID,fullName, department, level, image) {
 
 }
 
-let sectionEl = document.getElementById("sec1");
+
+let form = document.getElementById("form");
+
+let card=document.getElementById("Card")
+
 
 
 
@@ -46,29 +50,22 @@ EmployeeInfo.prototype.netsalary = function (level) {
 }
 
 EmployeeInfo.prototype.render = function () {
+    const div=document.createElement("div")
+    div.innerHTML=`
+    <div class="card">
+    <img src="${this.image}"<br>
+    <p> Name: ${this.fullName} - ID: ${this.employeeID}</p> <br>
+    <p>Departement: ${this.department} - Level: ${this.level}</p><br>
+    <p>Salary: ${this.salary}</p>
+    </div>`;
+    card.appendChild(div);
 
-    let imgEl=document.createElement('img')
-    imgEl.src=this.image;
-    let parEl=document.createElement('p') 
-    parEl.textContent=` Name: ${this.fullName} - ID: ${this.employeeID}`
-    let paEl=document.createElement('p')
-    paEl.textContent=`Departement: ${this.department} - Level: ${this.level}`
-    let pEl=document.createElement('p')
-    pEl.textContent= `${this.salary}`
-    
-    sectionEl.appendChild(imgEl);
-    sectionEl.appendChild(parEl);
-    sectionEl.appendChild(paEl);
-    sectionEl.appendChild(pEl);
-    
-
-    imgEl.style="width:300px ;border-radius:20px";
-    // sectionEl.style=" "
+   
 
 
 }
 EmployeeInfo.prototype.idNumber = function(){
-    this.employeeID=uniqueIdNumber(this.employeeID);
+    this.employeeID=uniqueIdNumber();
 }
 
 
@@ -90,9 +87,7 @@ let Hadi = new EmployeeInfo(1006, "Hadi Ahmad", "Finance", "Mid-Senior","https:/
 calling(allEmployees);
 
 //
-let body = document.getElementsByTagName("body")
-let form = document.getElementById("form");
-let btn = document.getElementById("btn");
+
 
 form.addEventListener("submit",submitHandler);
 
@@ -101,29 +96,16 @@ function submitHandler(event){
     // alert("hi");
     event.preventDefault();
    
+
     let Name=event.target.fullName.value;
-    let Department=event.target.department;
-    let level=event.target.level;
+    let Department=event.target.department.value;
+    let level=event.target.Level.value;
     let Emage=event.target.img.value;
-    let newCard = new EmployeeInfo(Name, Emage);
-    console.log(Name,Emage,Department);
-
-
-    let imagEl=document.createElement('img')
-    imagEl.src=Emage;
-    let parrEl=document.createElement('p') 
-    parrEl.textContent=` Name: ${Name}`
-    let parr2El=document.createElement('p')
-    parr2El.textContent=`Departement: ${Department} - Level: ${level}`
-    
-    
+    let newCard = new EmployeeInfo(1000,Name,Department,level,Emage);
 
     
-    sectionEl.appendChild(imagEl);
-    sectionEl.appendChild(parrEl);
-    sectionEl.appendChild(parr2El);
 
-//   EmployeeInfo[i].render();
+  newCard.render();
 
 
 }

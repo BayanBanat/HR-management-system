@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/431c29c6ee.js" crossorigin="anonymous"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="accounting.css">
+
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="">Accounting</a></li>
                 <li><a href=>Contact</a></li>
                 <li><a href="">More info</a></li>
@@ -23,13 +25,85 @@
 
 
     </header>
+
     <main>
+  
 
 
+        <table id="table">
+            <thead> <tr> 
+                 <th>Department name</th>
+              <th>Number of employees</th>
+              <th>Total salary</th>
+              <th>Average salary</th>
+          </tr>
+         </thead>
+         <tbody id="body">
+ 
+         </tbody>
+              <tfoot id="footer">
+                 <tr id="tr">
+                     <td id="1"></td>
+                     <td id="2"></td>
+                     <td id="3"></td>
+                     <td id="4"></td>
+                 </tr>
+             
+              </tfoot>
+        </table>
+
+        <form id="form">
+            <label for="fullName">Full name: </label><br>
+            <input class="one" id="fullName" type="text" value="" placeholder="Inter your fullName :"><br>
+            <label for="department">Department:</label>
+                <select id="department" form="form" style="width: 15rem;margin-top: 10px;">
+                
+                    <option value="Administration" >Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Development">Development</option>
+                    <option value="Finance">Finance</option><br>
+                </select>
+            <label for="Level">Level:</label> 
+            <select id="Level" form="form" style="width: 15rem;margin-top: 10px;">
+               
+                    <option value="Junior">Junior </option>
+                    <option value="Mid-Senior"> Mid-Senior</option>
+                    <option value="Senior"> Senior</option>
+                </select><br>
+            <label for="img">Image url:</label>
+            <input class="one" id="img" type="text" value="" placeholder="your image :"><br>
+            <input class="two" type="submit" value="submit" >
+        </form><br>
+        
+        <div id="Card"></div><br>
+
+       
+         <!-- <table id="table2">
+            <tr id="tr"> 
+                <th>Total</th>
+                
+             
+         </tr> -->
+        
+ 
+        
+        <!-- <table id="table">
+            <tr> 
+                <th>Department name</th>
+             <th>Number of employees</th>
+             <th>Total salary</th>
+             <th>Average salary</th>
+         </tr>
+        
+ 
+         </table> -->
+
+<script src="accounting.js"></script>
+<!-- <script src="app.js"></script> -->
     </main>
     <footer>
-        
-        <section>
+
+        <section class="c1">
             <a> <i class="fa-brands fa-facebook"></i></a>
             <a><i class="fa-brands fa-whatsapp"></i></a>
             <a> <i class="fa-solid fa-phone"></i></a>
@@ -46,5 +120,6 @@
     </footer>
 
 </body>
-<script src="app.js"></script>
+
+
 </html>

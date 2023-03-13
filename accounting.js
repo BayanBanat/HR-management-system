@@ -1,3 +1,4 @@
+
 'use srtict';
 
 const allEmployees = [];
@@ -14,11 +15,8 @@ function EmployeeInfo( employeeID,fullName, department, level, image) {
 }
 
 
-let form = document.getElementById("form");
 
-let card=document.getElementById("Card")
 let tableEl=document.getElementById("table")
-// let tableEl2=document.getElementById("table2")
 let tbodyEl=document.getElementById("body")
 let tdEl4=document.getElementById("1")
 let tdEl5=document.getElementById("2")
@@ -58,27 +56,10 @@ EmployeeInfo.prototype.netsalary = function (level) {
 
 }
 
-EmployeeInfo.prototype.render = function () {
-    const div=document.createElement("div")
-    div.innerHTML=`
-    <div class="card">
-    <img src="${this.image}"<br>
-    <p> Name: ${this.fullName} - ID: ${this.employeeID}</p> <br>
-    <p>Departement: ${this.department} - Level: ${this.level}</p><br>
-    <p>Salary: ${this.salary}</p>
-    </div>`;
-    card.appendChild(div);
 
-    
-
-   
-
-
-}
 
 EmployeeInfo.prototype.renderTable=function(){
     let tableEl=document.getElementById("table")
-    // let tableEl2=document.getElementById("table2")
     let tbodyEl=document.getElementById("body")
     let tdEl4=document.getElementById("1")
     let tdEl5=document.getElementById("2")
@@ -110,14 +91,6 @@ EmployeeInfo.prototype.renderTable=function(){
     tdEl7.textContent=this.totalAverage(this.department)
 
     
-
-    
-    
-
-
-    // for(let i=0;i<allEmployees.length;i++){
-
-    // }
 }
 let depNum;
 EmployeeInfo.prototype.departmentNumber = function (department) {
@@ -238,56 +211,7 @@ EmployeeInfo.prototype.averagelSalary = function (department) {
 
 
 
-EmployeeInfo.prototype.idNumber = function(){
-    this.employeeID=uniqueIdNumber();
-}
 
-
-
-
-
-//decleration
-
-let Ghazi = new EmployeeInfo( 1000,"Ghazi Samer", "Administration", "Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Ghazi.jpg?raw=true");
-let Lana = new EmployeeInfo(1001, "Lana Ali", "Finance", "Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Lana.jpg?raw=true");
-let Tamara = new EmployeeInfo(1002, "Tamara Ayoub", "Marketing", "Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Tamara.jpg?raw=true");
-let Safi = new EmployeeInfo(1003, "Safi Walid", "Administration", "Mid-Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Safi.jpg?raw=true");
-let Omar = new EmployeeInfo(1004, "Omar Zaid", "Development", "Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Omar.jpg?raw=true");
-let Rana = new EmployeeInfo(1005, "Rana Saleh", "Development", "Junior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Rana.jpg?raw=true");
-let Hadi = new EmployeeInfo(1006, "Hadi Ahmad", "Finance", "Mid-Senior","https://github.com/LTUC/amman-prep-d10/blob/main/Class-08/lab/assets/Hadi.jpg?raw=true");
-
-
-
-calling(allEmployees);
-
-//
-
-
-form.addEventListener("submit",submitHandler);
-
-function submitHandler(event){
-
-    // alert("hi");
-    event.preventDefault();
-   
-
-    let Name=event.target.fullName.value;
-    let Department=event.target.department.value;
-    let level=event.target.Level.value;
-    let Emage=event.target.img.value;
-    let newCard = new EmployeeInfo(1000,Name,Department,level,Emage);
-
-    
-
-  newCard.render();
-  saveData(allEmployees);
-
-
-}
-
-
-
-//functins
 
 function saveData(data){
     let stringArr=JSON.stringify(data);
@@ -323,24 +247,12 @@ function uniqueIdNumber() {
 
 function calling(allEmployees) {
     for (let i = 0; i < allEmployees.length; i++) {
-        allEmployees[i].render();
-        allEmployees[i].netsalary();
-        allEmployees[i].idNumber();
+        // allEmployees[i].render();
+        // allEmployees[i].netsalary();
+        // allEmployees[i].idNumber();
         allEmployees[i].renderTable();
         // allEmployees[i].departmentNumber();
 
 
     }
 }
-
-// export{EmployeeInfo,renderTable,departmentNumber,totalNumber,totalSal,totalAverage,totalSalary,averagelSalary,saveData,submitHandler,grtData,calling}
-
-
-
-
-
-
-
-
-
-

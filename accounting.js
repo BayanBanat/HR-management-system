@@ -5,6 +5,9 @@
 
 let retreivedArr = localStorage.getItem('name');
 let objArr = JSON.parse(retreivedArr);
+if(objArr !=null){
+
+}
 
 
 
@@ -36,7 +39,9 @@ function renderTable  () {
   let tdEl5 = document.getElementById("2")
   let tdEl6 = document.getElementById("3")
   let tdEl7 = document.getElementById("4")
+  if (objArr !=null){
 for (i = 0; i < objArr.length; i++) {
+  
   let trEl = document.createElement("tr")
   tbodyEl.appendChild(trEl);
   let tdEl = document.createElement("td")
@@ -48,11 +53,11 @@ for (i = 0; i < objArr.length; i++) {
   trEl.appendChild(tdEl1)
 
   let tdEl2 = document.createElement("td")
-  tdEl2.textContent =totalSalaryY(objArr[i].department) //average
+  tdEl2.textContent =totalSalaryY(objArr[i].department) //totalsalary
   trEl.appendChild(tdEl2)
 
   let tdEl3 = document.createElement("td")
-  tdEl3.textContent = averagelSalary() //total
+  tdEl3.textContent = averagelSalary() //average
   trEl.appendChild(tdEl3)
 
 
@@ -61,6 +66,7 @@ for (i = 0; i < objArr.length; i++) {
   tdEl6.textContent = totalSal()
   tdEl7.textContent = totalAverage()
 }
+  }
 
 }
 

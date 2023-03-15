@@ -75,164 +75,7 @@ EmployeeInfo.prototype.render = function () {
 
 }
 
-EmployeeInfo.prototype.renderTable=function(){
-    let tableEl=document.getElementById("table")
-    // let tableEl2=document.getElementById("table2")
-    let tbodyEl=document.getElementById("body")
-    let tdEl4=document.getElementById("1")
-    let tdEl5=document.getElementById("2")
-    let tdEl6=document.getElementById("3")
-    let tdEl7=document.getElementById("4")
 
-    let trEl=document.createElement("tr")
-    tbodyEl.appendChild(trEl);
-    let tdEl=document.createElement("td")
-    tdEl.textContent=this.department
-    trEl.appendChild(tdEl)
-
-    let tdEl1=document.createElement("td")
-    tdEl1.textContent= this.departmentNumber(this.department)//numbers of employees
-    trEl.appendChild(tdEl1)
-
-    let tdEl2=document.createElement("td")
-    tdEl2.textContent=this.totalSalary(this.department) //average
-    trEl.appendChild(tdEl2)
-
-    let tdEl3=document.createElement("td")
-    tdEl3.textContent=this.averagelSalary(this.department) //total
-    trEl.appendChild(tdEl3)
-
-
-    tdEl4.textContent="Total"
-    tdEl5.textContent=this.totalNumber(this.department)
-    tdEl6.textContent=this.totalSal(this.department)
-    tdEl7.textContent=this.totalAverage(this.department)
-
-    
-
-    
-    
-
-
-    // for(let i=0;i<allEmployees.length;i++){
-
-    // }
-}
-let depNum;
-EmployeeInfo.prototype.departmentNumber = function (department) {
-
-    
-   
-    if (department=="Administration") {
-    depNum=2;
-
-
- }else if(department=="Finance"){
-     depNum=2;
- }
- else if (department=="Development"){
-     depNum=2;
-
-
- }
- else if (department=="Marketing"){
-    depNum=1;
-    
-
-}
-  
-  return depNum;
-
-
-}
-EmployeeInfo.prototype.totalNumber=function(department) {
-    let total = 0;
-    for (let i = 0; i < department.length; i++) {
-      total += depNum;
-    }
-    return total;
-  }
-  
-  EmployeeInfo.prototype.totalSal=function(department) {
-    let total = 0;
-    for (let i = 0; i < department.length; i++) {
-      total += totalSalary;
-    }
-    return total;
-  }
-
-  EmployeeInfo.prototype.totalAverage=function(department) {
-    let total = 0;
-    for (let i = 0; i < department.length; i++) {
-      total +=averageSalary;
-    }
-    return total;
-  }
-
-let totalSalary;
-EmployeeInfo.prototype.totalSalary = function (department) {
-
-    
-
-    let adminsSalary=0;
-    let financeSalary=0;
-    let developSalary=0;
-    let markitSalary=0;
-   
-    if (department=="Administration") {
-        totalSalary= adminsSalary+this.salary;
-    
-
-
- }else if(department=="Finance"){
-    totalSalary= financeSalary+this.salary;
- }
- else if (department=="Development"){
-    totalSalary=developSalary+this.salary;
-
-
- }
- else if (department=="Marketing"){
-    totalSalary= markitSalary+this.salary;
-    
-
-}
-  
-  return totalSalary;
-
-
-}
-
-let averageSalary;
-EmployeeInfo.prototype.averagelSalary = function (department) {
-
-    
-
-    
-   
-    if (department=="Administration") {
-        averageSalary= totalSalary / depNum;
-    
-
-
- }else if(department=="Finance"){
-    averageSalary= totalSalary / depNum;
- }
- else if (department=="Development"){
-    averageSalary= totalSalary / depNum;
-
-
- }
- else if (department=="Marketing"){
-    averageSalary= totalSalary / depNum;
-    
-
-}
-  
-  return averageSalary;
-
-
-}
 
 
 
@@ -257,7 +100,7 @@ let Hadi = new EmployeeInfo(1006, "Hadi Ahmad", "Finance", "Mid-Senior","https:/
 
 
 
-calling(allEmployees);
+// calling(allEmployees);
 
 //
 
@@ -328,14 +171,13 @@ function calling(allEmployees) {
         allEmployees[i].render();
         allEmployees[i].netsalary();
         allEmployees[i].idNumber();
-        allEmployees[i].renderTable();
-        // allEmployees[i].departmentNumber();
+       
 
 
     }
 }
 
-// export{EmployeeInfo,renderTable,departmentNumber,totalNumber,totalSal,totalAverage,totalSalary,averagelSalary,saveData,submitHandler,grtData,calling}
+
 
 
 

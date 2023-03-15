@@ -18,7 +18,6 @@ let form = document.getElementById("form");
 
 let card=document.getElementById("Card")
 let tableEl=document.getElementById("table")
-// let tableEl2=document.getElementById("table2")
 let tbodyEl=document.getElementById("body")
 let tdEl4=document.getElementById("1")
 let tdEl5=document.getElementById("2")
@@ -298,6 +297,7 @@ function grtData(){
     let retreivedArr=localStorage.getItem('name');
     let objArr=JSON.parse(retreivedArr);
     if(objArr!=null){
+      allEmployees=[];
         for(i=0;i<objArr.length;i++){
         new EmployeeInfo(objArr[i].employeeID,objArr[i].fullName,objArr[i].department,objArr[i].level,objArr[i].image) 
     }
@@ -306,6 +306,7 @@ function grtData(){
     calling(allEmployees);
 }
 grtData();
+
 
 
 function uniqueIdNumber() {

@@ -1,6 +1,6 @@
 'use srtict';
 
-const allEmployees = [];
+var allEmployees = [];
 function EmployeeInfo( employeeID,fullName, department, level, image) {
 
     this.employeeID = uniqueIdNumber(this.employeeID);
@@ -276,7 +276,7 @@ function submitHandler(event){
     let Emage=event.target.img.value;
     let newCard = new EmployeeInfo(1000,Name,Department,level,Emage);
 
-    
+    console.log(allEmployees)
 
   newCard.render();
   saveData(allEmployees);
@@ -302,6 +302,7 @@ function grtData(){
         new EmployeeInfo(objArr[i].employeeID,objArr[i].fullName,objArr[i].department,objArr[i].level,objArr[i].image) 
     }
     }
+    console.log(allEmployees);
     
     calling(allEmployees);
 }

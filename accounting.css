@@ -113,3 +113,41 @@ footer{
     align-items: center;
 
 }
+
+
+
+/* function departmentNumber () {
+
+
+
+    let depNumA=0;
+    let depNumD=0;
+    let depNumM=0;
+    let depNumF=0;
+    
+    for(let i=0;i<objArr.length;i++){
+    
+      if (objArr[i].department == "Administration") {
+        depNumA+=1;
+        
+    
+    
+      } else if (objArr[i].department == "Finance") {
+        depNumF+=1;
+      }
+      else if (objArr[i].department == "Development") {
+        depNumD+=1;
+    
+    
+      }
+      else if (objArr[i].department == "Marketing") {
+        depNumM +=1;
+    
+    
+      }
+    
+    
+      
+    
+    }
+    } */

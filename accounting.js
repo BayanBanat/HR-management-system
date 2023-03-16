@@ -8,6 +8,7 @@ let objArr = JSON.parse(retreivedArr);
 if(objArr !=null){
 
 }
+console.log(objArr[0].department);
 
 
 
@@ -40,7 +41,7 @@ function renderTable  () {
   let tdEl6 = document.getElementById("3")
   let tdEl7 = document.getElementById("4")
   if (objArr !=null){
-for (i = 0; i < objArr.length; i++) {
+for ( i = 0; i < 4; i++) {
   
   let trEl = document.createElement("tr")
   tbodyEl.appendChild(trEl);
@@ -72,15 +73,16 @@ for (i = 0; i < objArr.length; i++) {
 
 function departmentNumber () {
 let depNum;
+  
 
-
+// for ()
 
   if (objArr[i].department == "Administration") {
-    depNum=2;
+    depNum=4;
 
 
   } else if (objArr[i].department == "Finance") {
-    depNum=2;
+    depNum=6;
   }
   else if (objArr[i].department == "Development") {
     depNum=2;
@@ -98,6 +100,41 @@ let depNum;
 
 
 }
+// function departmentNumber () {
+
+
+//   let depNum;
+//   let depNumA=0;
+//   let depNumD=0;
+//   let depNumM=0;
+//   let depNumF=0;
+  
+//   for(let i=0;i<objArr.length;i++){
+  
+//     if (objArr[i].department == "Administration") {
+//       depNum= depNumA+=1;
+      
+  
+  
+//     } else if (objArr[i].department == "Finance") {
+//       depNum= depNumF+=1;
+//     }
+//     else if (objArr[i].department == "Development") {
+//       depNum= depNumD+=1;
+  
+  
+//     }
+//     else if (objArr[i].department == "Marketing") {
+//       depNum= depNumM +=1;
+  
+  
+//     }
+  
+//   return depNum;
+    
+  
+//   }
+//   }
 function totalNumber  () {
   let total = 0;
   for (let i = 0; i < objArr.length; i++) {

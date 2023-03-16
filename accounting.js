@@ -5,227 +5,79 @@
 
 let retreivedArr = localStorage.getItem('name');
 let objArr = JSON.parse(retreivedArr);
-if(objArr !=null){
-
-}
-console.log(objArr[0].department);
 
 
 
 
 
+const departments = {};
 
-
-
-let tableEl = document.getElementById("table")
-let tbodyEl = document.getElementById("body")
-let tdEl4 = document.getElementById("1")
-let tdEl5 = document.getElementById("2")
-let tdEl6 = document.getElementById("3")
-let tdEl7 = document.getElementById("4")
-
-
-
-
-
-
-
-renderTable  ();
-
-
-function renderTable  () {
-  let tableEl = document.getElementById("table")
-  let tbodyEl = document.getElementById("body")
-  let tdEl4 = document.getElementById("1")
-  let tdEl5 = document.getElementById("2")
-  let tdEl6 = document.getElementById("3")
-  let tdEl7 = document.getElementById("4")
-  if (objArr !=null){
-for ( i = 0; i < 4; i++) {
-  
-  let trEl = document.createElement("tr")
-  tbodyEl.appendChild(trEl);
-  let tdEl = document.createElement("td")
-  tdEl.textContent = objArr[i].department
-  trEl.appendChild(tdEl)
-
-  let tdEl1 = document.createElement("td")
-  tdEl1.textContent =departmentNumber(); //numbers of employees
-  trEl.appendChild(tdEl1)
-
-  let tdEl2 = document.createElement("td")
-  tdEl2.textContent =totalSalaryY(objArr[i].department) //totalsalary
-  trEl.appendChild(tdEl2)
-
-  let tdEl3 = document.createElement("td")
-  tdEl3.textContent = averagelSalary() //average
-  trEl.appendChild(tdEl3)
-
-
-  tdEl4.textContent = "Total"
-  tdEl5.textContent = totalNumber()
-  tdEl6.textContent = totalSal()
-  tdEl7.textContent = totalAverage()
-}
+for (const obj of objArr) {
+  if (!departments[obj.department]) {
+    departments[obj.department] = {numEmployees: 1, totalSalary: obj.salary};
+  } else {
+    departments[obj.department].numEmployees++;
+    departments[obj.department].totalSalary += obj.salary;
   }
-
-}
-
-function departmentNumber () {
-let depNum;
-  
-
-// for ()
-
-  if (objArr[i].department == "Administration") {
-    depNum=4;
-
-
-  } else if (objArr[i].department == "Finance") {
-    depNum=6;
-  }
-  else if (objArr[i].department == "Development") {
-    depNum=2;
-
-
-  }
-  else if (objArr[i].department == "Marketing") {
-    depNum = 1;
-
-
-  }
-
-
-  return depNum;
-
-
-}
-// function departmentNumber () {
-
-
-//   let depNum;
-//   let depNumA=0;
-//   let depNumD=0;
-//   let depNumM=0;
-//   let depNumF=0;
-  
-//   for(let i=0;i<objArr.length;i++){
-  
-//     if (objArr[i].department == "Administration") {
-//       depNum= depNumA+=1;
-      
-  
-  
-//     } else if (objArr[i].department == "Finance") {
-//       depNum= depNumF+=1;
-//     }
-//     else if (objArr[i].department == "Development") {
-//       depNum= depNumD+=1;
-  
-  
-//     }
-//     else if (objArr[i].department == "Marketing") {
-//       depNum= depNumM +=1;
-  
-  
-//     }
-  
-//   return depNum;
-    
-  
-//   }
-//   }
-function totalNumber  () {
-  let total = 0;
-  for (let i = 0; i < objArr.length; i++) {
-    total += departmentNumber ();
-  }
-  return total;
-}
-
-function totalSal  () {
-  let total = 0;
-  for (let i = 0; i < objArr.length; i++) {
-    total += totalSalaryY();
-  }
-  return total;
-}
-totalAverage  ()
-function totalAverage  () {
-  let total = 0;
-  for (let i = 0; i < objArr.length; i++) {
-    total += averagelSalary  ();
-  }
-  return total;
 }
 
 
-function totalSalaryY  () {
-let totalSalary;
+let totalSalary = 0;
+let totalNumEmployees = 0;
 
+const tableBody = document.getElementById("table-body");
 
-  let adminsSalary = 0;
-  let financeSalary = 0;
-  let developSalary = 0;
-  let markitSalary = 0;
-
-  if (objArr[i].department == "Administration") {
-    totalSalary = adminsSalary +objArr[i].salary;
-
-
-
-  } else if (objArr[i].department == "Finance") {
-    totalSalary = adminsSalary +objArr[i].salary;
-  }
-  else if (objArr[i].department == "Development") {
-    totalSalary = adminsSalary +objArr[i].salary;
-
-
-  }
-  else if (objArr[i].department == "Marketing") {
-    totalSalary = adminsSalary +objArr[i].salary;
-
-
-  }
-
-  return totalSalary;
+for (const [department, data] of Object.entries(departments)) {
+  
+    if (!department) {
+      continue;
+    }
+    const avgSalary = data.totalSalary / data.numEmployees;
+   
+  
  
-
-
+  const row = document.createElement("tr");
+  const td1 = document.createElement("td");
+  td1.textContent = department;
+  row.appendChild(td1);
+  const td2 = document.createElement("td");
+  td2.textContent = data.numEmployees;
+  row.appendChild(td2);
+  const td3 = document.createElement("td");
+  td3.textContent = data.totalSalary;
+  row.appendChild(td3);
+  const td4 = document.createElement("td");
+  td4.textContent = avgSalary.toFixed(1);
+  row.appendChild(td4);
+  tableBody.appendChild(row);
+  totalSalary += data.totalSalary;
+  totalNumEmployees += data.numEmployees;
 }
 
+const tableFooter = document.getElementById("table-footer");
+
+const td5 = document.createElement("td");
+td5.textContent = "Total";
+tableFooter.appendChild(td5);
+
+const td6 = document.createElement("td");
+td6.textContent = totalNumEmployees;
+tableFooter.appendChild(td6);
+
+const td7 = document.createElement("td");
+td7.textContent = totalSalary;
+tableFooter.appendChild(td7);
+
+const td8 = document.createElement("td");
+const avgSalary = totalSalary / totalNumEmployees;
+td8.textContent = avgSalary;
+tableFooter.appendChild(td8);
 
 
 
-function averagelSalary  () {
-
-let averageSalary;
 
 
 
-  if (objArr[i].department == "Administration") {
-    averageSalary = totalSalaryY() / departmentNumber();
-
-
-
-  } else if (objArr[i].department == "Finance") {
-    averageSalary = totalSalaryY() / departmentNumber();
-  }
-  else if (objArr[i].department == "Development") {
-    averageSalary = totalSalaryY() / departmentNumber();
-
-
-  }
-  else if (objArr[i].department == "Marketing") {
-    averageSalary = totalSalaryY() / departmentNumber();
-
-
-  }
-
-  return averageSalary;
-
-
-}
 
 
 

@@ -19,6 +19,10 @@ header{
     
     
 }
+main{
+    width: 100vw;
+    height: 100vh;
+}
 
 
 nav{
@@ -48,7 +52,7 @@ table {
     text-align: center;
     border: black solid 1px;
     box-shadow: 14px 21px 6px #00000075;
-    margin:auto 5px;
+    margin:20px 5px;
     
    
 }
